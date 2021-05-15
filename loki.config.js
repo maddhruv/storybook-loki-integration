@@ -12,4 +12,7 @@ module.exports = {
       preset: "iPhone 7",
     },
   },
+  chromeDockerUseCopy: !!process.env.CI,
+  fileNameFormatter: ({ configurationName, kind, story }) =>
+    `${kind} > ${story} on ${configurationName.split(".")[1]}`.toLowerCase(),
 };
